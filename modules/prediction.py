@@ -59,13 +59,6 @@ def prediction(data):
 
     st.info(f"Detected Problem Type: {problem_type}")
 
-    st.subheader("📋 Dataset Information")
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Rows", len(data))
-    c2.metric("Columns", len(data.columns))
-    c3.metric("Features", len(features))
-    c4.metric("Target", target)
-
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42
     )
@@ -142,13 +135,13 @@ def prediction(data):
 
     if problem_type == "Regression":
         r2, mae, rmse = st.session_state["metrics"][best_model]
-        st.success(f"🏆 Best Model: {best_model}")
+        st.success(f"Best Model: {best_model}")
         a, b, c = st.columns(3)
         a.metric("R² Score", f"{r2:.3f}")
         b.metric("MAE", f"{mae:.2f}")
         c.metric("RMSE", f"{rmse:.2f}")
     else:
-        st.success(f"🏆 Best Model: {best_model}")
+        st.success(f"Best Model: {best_model}")
         st.metric("Accuracy", f"{scores[best_model]*100:.2f}%")
 
     if hasattr(model, "feature_importances_"):
