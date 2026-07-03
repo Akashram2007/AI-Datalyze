@@ -98,12 +98,6 @@ https://ai-datalyze.streamlit.app
 
 ---
 
-## 🧹 Missing Data Cleaning
-
-![Missing Data](Missing%20Data.png)
-
----
-
 ## 📈 Visualization
 
 ![Visualization](Data%20Visualization.png)
