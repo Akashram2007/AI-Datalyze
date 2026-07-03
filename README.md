@@ -2,110 +2,187 @@
 
 [![Python](https://img.shields.io/badge/Made%20with-Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
-[![Status](https://img.shields.io/badge/Status-Active-success?style=flat)]()
+[![Scikit-Learn](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Status](https://img.shields.io/badge/Status-Active-success)]()
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
-[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)]()
 
 ---
 
-### 🧠 Overview
+# 🧠 Overview
 
-**AI Datalyze** is an interactive web app built with **Streamlit** that lets users upload CSV datasets, explore insights, visualize patterns, and download cleaned data — all in one place.
+**AI Datalyze** is an AI-powered data analytics web application built with **Python** and **Streamlit** that simplifies the complete data analysis workflow.
 
-🎯 Ideal for students, data beginners, and analysts who want quick insights without writing a single line of code!
+Users can upload datasets, clean missing values, explore data through interactive visualizations, train multiple machine learning models, compare their performance, and make real-time predictions—all from a single user-friendly interface.
 
----
-
-## 🚀 Features
-
-✅ Upload CSV files easily  
-✅ View dataset summary (rows, columns, datatypes, and missing values)  
-✅ Clean missing data (drop or fill)  
-✅ Generate visualizations (line, bar, scatter, histogram, heatmap, etc.)  
-✅ Correlation and statistical insights  
-✅ Download cleaned or analyzed dataset  
+Whether you're a student, beginner, or data enthusiast, AI Datalyze makes data analysis easier without writing complex code.
 
 ---
 
-## 🧰 Tech Stack
+# 🚀 Features
 
-| Category | Tools |
-|-----------|--------|
-| 💻 Language | Python |
-| 🧱 Framework | Streamlit |
-| 📊 Libraries | Pandas, NumPy, Matplotlib, Seaborn |
-| ☁️ Hosting | Streamlit Cloud |
+### 📂 Dataset Management
+- Upload CSV and Excel datasets
+- Dataset preview
+- Smart data filtering
+- Dataset information (rows, columns, size)
+
+### 📈 Data Analysis
+- Dataset summary
+- Data types
+- Descriptive statistics
+- Missing value detection
+
+### 🧹 Data Cleaning
+- Drop missing values
+- Fill missing values
+- Cleaned dataset preview
+
+### 📊 Interactive Visualizations
+- Bar Chart
+- Line Chart
+- Scatter Plot
+- Histogram
+- Heatmap
+
+### 🤖 Machine Learning
+- Automatic Regression/Classification detection
+- Train multiple ML models
+- Model comparison
+- Best model selection
+- Performance metrics
+  - R² Score
+  - Accuracy
+  - MAE
+  - RMSE
+- Feature Importance visualization
+
+### 🎯 Prediction
+- Real-time prediction
+- User input interface
+- Predict using the best trained model
 
 ---
 
-## 🌐 Live Demo
+# 🛠 Tech Stack
 
-🎯 **Try it now:** [AI Datalyze App](https://ai-datalyze.streamlit.app)
-
----
-
-## 🖼️ Preview
-
-Here’s a look at the **AI Datalyze** interface 👇  
-
-| Data Preview | Data Summary | Visualization |
-|---------------|---------------|----------------|
-| ![Data Preview Screenshot](https://github.com/Akashram2007/Data-Analyzer/blob/main/Data%20Preview.png) | ![Data Summary Screenshot](https://github.com/Akashram2007/Data-Analyzer/blob/main/Data%20Summary.png) | ![Visualization Screenshot](https://github.com/Akashram2007/Data-Analyzer/blob/main/Data%20Visualization.png) |
+| Category | Technologies |
+|----------|--------------|
+| Language | Python |
+| Framework | Streamlit |
+| Data Analysis | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Machine Learning | Scikit-learn |
+| Deployment | Streamlit Cloud |
 
 ---
 
-## ⚙️ Installation Guide
+# 🌐 Live Demo
 
-Run the following commands to set it up locally 👇
+🚀 **Try AI Datalyze**
+
+https://ai-datalyze.streamlit.app
+
+---
+
+# 📸 Application Preview
+
+## 🔍 Data Preview
+
+![Data Preview](Data%20Preview.png)
+
+---
+
+## 📊 Data Summary
+
+![Data Summary](Data%20Summary.png)
+
+---
+
+## 🧹 Missing Data Cleaning
+
+![Missing Data](Missing%20Data.png)
+
+---
+
+## 📈 Visualization
+
+![Visualization](Data%20Visualization.png)
+
+---
+
+## 🤖 Model Training
+
+![Model Training](Model%20Training.png)
+
+---
+
+## ⭐ Model Performance
+
+![Model Performance](Model%20Performance.png)
+
+---
+
+## 🎯 Prediction
+
+![Prediction](Prediction.png)
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
 
 ```bash
-# Clone the repository
 git clone https://github.com/Akashram2007/Data-Analyzer.git
+```
 
-# Navigate to project folder
+Move into the project folder
+
+```bash
 cd Data-Analyzer
+```
 
-# Install required packages
+Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-# Start the Streamlit app
+Run the application
+
+```bash
 streamlit run app.py
 ```
 
----
+# 🚀 Future Enhancements
 
-## 📁 Folder Structure
-
-```
-Data-Analyzer/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── Data Preview.png
-├── Data Summary.png
-└── Data Visualization.png
-```
+- PDF Report Generation
+- Dashboard Export
+- More Machine Learning Algorithms
+- Deep Learning Support
+- Time Series Forecasting
+- Natural Language Dataset Query
+- User Authentication
+- Database Integration
 
 ---
 
-## 💡 Future Enhancements
+# 👨‍💻 Author
 
-🚧 Add user authentication  
-🚧 Include advanced visualizations (boxplots, pairplots, etc.)  
-🚧 Add machine learning insights    
+**Akash R**
 
----
+📧 akashgram0103@gmail.com
 
-## 🧑‍💻 Author
+🔗 LinkedIn
+https://www.linkedin.com/in/akash-dev137
 
-**Akash R**  
-📧 [akashgram0103@gmail.com](mailto:akashgram0103@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/akash137)  
-🔗 [GitHub](https://github.com/Akashram2007)
+🔗 GitHub
+https://github.com/Akashram2007
 
 ---
 
-## ⭐ Support
+# ⭐ Support
 
-If you find this project useful, don’t forget to give it a **⭐ star** on GitHub — it helps a lot!
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It motivates me to build more open-source projects and continuously improve AI Datalyze.
