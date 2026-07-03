@@ -7,8 +7,8 @@ from modules.cleaning import data_cleaning
 from modules.visualization import visualization
 from modules.prediction import prediction
 
-st.set_page_config(page_title="AI Data Analyzer", page_icon="🔍")
-st.sidebar.title("AI Data Analyzer")
+st.set_page_config(page_title="AI Datalyze", page_icon="🔍")
+st.sidebar.title("AI Datalyze")
 st.sidebar.divider()
 file = st.file_uploader("Upload File", type=["csv", "xlsx"], width=400)
 menu = st.sidebar.radio(
