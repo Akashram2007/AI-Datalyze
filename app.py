@@ -61,7 +61,7 @@ if file is not None:
         prediction(data)
         
 else:
-    st.title("Data Analyzer")
+    st.title("AI Datalyze")
     st.divider()
     st.header("Analyze, Clean, and Visualize Your Data in Seconds")
     st.subheader("Start Exploring Your Data Now!!")
