@@ -36,6 +36,13 @@ def visualization(data):
 
     columns = data.columns.to_list()
     numeric_columns = data.select_dtypes(include=["number"]).columns.to_list()
+    MAX_ROWS = 5000
+
+    if len(data) > MAX_ROWS:
+        st.info(f"Large dataset detected ({len(data)} rows). Using a random sample of {MAX_ROWS} rows for faster visualization.")
+        plot_data = data.sample(MAX_ROWS, random_state=42)
+    else:
+        plot_data = data
 
     if plot != "none":
         fig, a = plt.subplots()
@@ -43,7 +50,7 @@ def visualization(data):
         # ---------------- HEATMAP ----------------
         if plot == "Heat map":
             st.header("Heat Map")
-            corr = data.corr(numeric_only=True)
+            corr = plot_data.corr(numeric_only=True)
             sns.heatmap(corr, annot=True, cmap="coolwarm")
 
         # -------- COMMON INPUTS --------
@@ -65,36 +72,39 @@ def visualization(data):
         if plot != "Heat map":
             color = st.color_picker("Graph colour", value="#1DB0D6", width=300)
 
-        # ---------------- HISTOGRAM ----------------
-        if plot == "Histogram":
-            st.header("Histogram Plot")
-            bins = int(
-                st.number_input("Enter no of Bins", max_value=20, value=6, width=300)
-            )
-            sns.histplot(data[x], bins=bins, color=color)
+        generate = st.button("Generate Visualization", type="primary")
 
-        # ---------------- SCATTER ----------------
-        if plot == "Scatter":
-            sns.scatterplot(data=data, x=x, y=y, color=color)
-
-        # ---------------- LINE ----------------
-        if plot == "Line":
-            sns.lineplot(data=data, x=x, y=y, color=color)
-
-        # ---------------- BAR ----------------
-        if plot == "Bar":
-            sns.barplot(data=data, x=x, y=y, color=color)
-
-        with st.spinner("Visualizing Your Data..."):
-            time.sleep(0.5)
-            plt.style.use("default")
-            plt.xticks(rotation=45, ha="right")
-            st.pyplot(fig, width="content")
-            buf = BytesIO()
-            fig.savefig(buf, format="png")
-            st.download_button(
-                "Download Chart",
-                data=buf.getvalue(),
-                mime="image/png",
-                file_name=f"{plot} chart.png",
-            )
+        if generate:
+            # ---------------- HISTOGRAM ----------------
+            if plot == "Histogram":
+                st.header("Histogram Plot")
+                bins = int(
+                    st.number_input("Enter no of Bins", max_value=20, value=6, width=300)
+                )
+                sns.histplot(plot_data[x], bins=bins, color=color)
+    
+            # ---------------- SCATTER ----------------
+            if plot == "Scatter":
+                sns.scatterplot(data=plot_data, x=x, y=y, color=color)
+    
+            # ---------------- LINE ----------------
+            if plot == "Line":
+                sns.lineplot(data=plot_data, x=x, y=y, color=color)
+    
+            # ---------------- BAR ----------------
+            if plot == "Bar":
+                sns.barplot(data=plot_data, x=x, y=y, color=color)
+    
+            with st.spinner("Visualizing Your Data..."):
+                time.sleep(0.5)
+                plt.style.use("default")
+                plt.xticks(rotation=45, ha="right")
+                st.pyplot(fig, width="content")
+                buf = BytesIO()
+                fig.savefig(buf, format="png")
+                st.download_button(
+                    "Download Chart",
+                    data=buf.getvalue(),
+                    mime="image/png",
+                    file_name=f"{plot} chart.png",
+                )
