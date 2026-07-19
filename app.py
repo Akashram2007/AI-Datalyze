@@ -10,7 +10,7 @@ from modules.prediction import prediction
 st.set_page_config(page_title="AI Datalyze", page_icon="🔍")
 st.sidebar.title("AI Datalyze")
 st.sidebar.divider()
-file = st.file_uploader("Upload File", type=["csv", "xlsx"], width=400)
+file = st.file_uploader("Upload File", type=["csv", "xlsx", "xls"], width=400)
 menu = st.sidebar.radio(
     "Sections :",
     options=[
@@ -35,7 +35,7 @@ if file is not None:
                 file.seek(0)
                 data = pd.read_csv(file, encoding="cp1252")
     
-    elif file_type == "xlsx":
+    elif file_type in ["xlsx", "xls"]:
         data = pd.read_excel(file, engine="openpyxl")
     
     else:
